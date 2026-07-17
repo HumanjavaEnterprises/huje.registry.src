@@ -1,0 +1,678 @@
+# huje.registry — the single source of truth for the Nostr package family.
+# Edit HERE. Sites and CI fetch this file; they never re-derive package facts.
+# Every row is verified against the package's real on-disk manifest.
+# Run scripts/validate_registry.py before committing any change.
+
+version: 1
+
+enums:
+  ecosystem: [npm, pypi, both, plugin]
+  family:    [nostr, sense, social, core, enclave, orchestrator]
+  pillar:    [identity, finance, time, relationships, alignment, orchestrator, tool, perception]
+  status:    [published, code, shell, planned, orphan]
+
+packages:
+
+  # ---------------------------------------------------------------------------
+  # npm — published TypeScript libraries
+  # ---------------------------------------------------------------------------
+
+  - id: nostr-crypto-utils
+    ecosystem: npm
+    current_name: nostr-crypto-utils
+    target_name: nostr-crypto-utils
+    old_names: []
+    family: core
+    pillar: tool
+    version: 0.7.1
+    status: published
+    advertise_install: true
+    test_count: 143
+    repo:
+      path: /Users/vveerrgg/Development/nostr-crypto-utils
+      slug: HumanjavaEnterprises/nostr-crypto-utils
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-crypto-utils/ci.yml
+      version: https://img.shields.io/npm/v/nostr-crypto-utils
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: npm install nostr-crypto-utils
+    urls:
+      npm: https://www.npmjs.com/package/nostr-crypto-utils
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-crypto-utils
+      docs: null
+    tagline: Core cryptographic primitives for Nostr.
+    description: Core cryptographic utilities for Nostr protocol.
+
+  - id: nostr-nsec-seedphrase
+    ecosystem: npm
+    current_name: nostr-nsec-seedphrase
+    target_name: nostr-nsec-seedphrase
+    old_names: []
+    family: enclave
+    pillar: identity
+    version: 0.7.1
+    status: published
+    advertise_install: true
+    test_count: 24
+    repo:
+      path: /Users/vveerrgg/Development/nostr-nsec-seedphrase
+      slug: HumanjavaEnterprises/nostr-nsec-seedphrase
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-nsec-seedphrase/ci.yml
+      version: https://img.shields.io/npm/v/nostr-nsec-seedphrase
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: npm install nostr-nsec-seedphrase
+    urls:
+      npm: https://www.npmjs.com/package/nostr-nsec-seedphrase
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-nsec-seedphrase
+      docs: null
+    tagline: BIP39 seed phrases and key management for Nostr.
+    description: A comprehensive TypeScript library for Nostr key management with BIP39 seed phrases, supporting both ESM and CommonJS. Implements NIP-01, NIP-06, NIP-19, and NIP-26.
+
+  - id: nostr-auth-middleware
+    ecosystem: npm
+    current_name: nostr-auth-middleware
+    target_name: nostr-auth-middleware
+    old_names: []
+    family: nostr
+    pillar: identity
+    version: 0.5.1
+    status: published
+    advertise_install: true
+    test_count: 35
+    repo:
+      path: /Users/vveerrgg/Development/nostr-auth-middleware
+      slug: HumanjavaEnterprises/nostr-auth-middleware
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-auth-middleware/ci.yml
+      version: https://img.shields.io/npm/v/nostr-auth-middleware
+      license: null
+    install: npm install nostr-auth-middleware
+    urls:
+      npm: https://www.npmjs.com/package/nostr-auth-middleware
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-auth-middleware
+      docs: null
+    tagline: Security-first Nostr authentication middleware.
+    description: A focused, security-first authentication middleware for Nostr applications.
+
+  - id: nostr-websocket-utils
+    ecosystem: npm
+    current_name: nostr-websocket-utils
+    target_name: nostr-websocket-utils
+    old_names: []
+    family: nostr
+    pillar: tool
+    version: 0.4.1
+    status: published
+    advertise_install: true
+    test_count: 16
+    repo:
+      path: /Users/vveerrgg/Development/nostr-websocket-utils
+      slug: HumanjavaEnterprises/nostr-websocket-utils
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-websocket-utils/ci.yml
+      version: https://img.shields.io/npm/v/nostr-websocket-utils
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: npm install nostr-websocket-utils
+    urls:
+      npm: https://www.npmjs.com/package/nostr-websocket-utils
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-websocket-utils
+      docs: null
+    tagline: Resilient WebSocket utilities for Nostr.
+    description: Robust WebSocket utilities for Nostr applications with automatic reconnection, channel-based messaging, heartbeat monitoring, and message queueing.
+
+  - id: nostr-biometric-auth-utils
+    ecosystem: npm
+    current_name: nostr-biometric-auth-utils
+    target_name: nostr-biometric-auth-utils
+    old_names: []
+    family: nostr
+    pillar: identity
+    version: 0.2.1
+    status: published
+    advertise_install: true
+    test_count: 5
+    repo:
+      path: /Users/vveerrgg/Development/nostr-biometric-auth-utils
+      slug: HumanjavaEnterprises/nostr-biometric-auth-utils
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-biometric-auth-utils/ci.yml
+      version: https://img.shields.io/npm/v/nostr-biometric-auth-utils
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: npm install nostr-biometric-auth-utils
+    urls:
+      npm: https://www.npmjs.com/package/nostr-biometric-auth-utils
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-biometric-auth-utils
+      docs: null
+    tagline: WebAuthn biometric auth for Nostr.
+    description: A utility library for biometric authentication in Nostr applications using WebAuthn.
+
+  - id: nostr-dm-magiclink-utils
+    ecosystem: npm
+    current_name: nostr-dm-magiclink-utils
+    target_name: nostr-dm-magiclink-utils
+    old_names: []
+    family: nostr
+    pillar: identity
+    version: 0.3.1
+    status: published
+    advertise_install: true
+    test_count: 24
+    repo:
+      path: /Users/vveerrgg/Development/nostr-dm-magiclink-utils
+      slug: HumanjavaEnterprises/nostr-dm-magiclink-utils
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-dm-magiclink-utils/ci.yml
+      version: https://img.shields.io/npm/v/nostr-dm-magiclink-utils
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: npm install nostr-dm-magiclink-utils
+    urls:
+      npm: https://www.npmjs.com/package/nostr-dm-magiclink-utils
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-dm-magiclink-utils
+      docs: null
+    tagline: Magic-link auth over Nostr DMs.
+    description: A Nostr utility library for magic link authentication via direct messages, with NIP-01/04 encryption, multi-relay support, and i18n.
+
+  - id: nostr-metadata-utils
+    ecosystem: npm
+    current_name: nostr-metadata-utils
+    target_name: nostr-metadata-utils
+    old_names: []
+    family: nostr
+    pillar: tool
+    version: 0.2.1
+    status: published
+    advertise_install: true
+    test_count: 4
+    repo:
+      path: /Users/vveerrgg/Development/nostr-metadata-utils
+      slug: HumanjavaEnterprises/nostr-metadata-utils
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-metadata-utils/ci.yml
+      version: https://img.shields.io/npm/v/nostr-metadata-utils
+      license: null
+    install: npm install nostr-metadata-utils
+    urls:
+      npm: https://www.npmjs.com/package/nostr-metadata-utils
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-metadata-utils
+      docs: null
+    tagline: NIP-05 verification and badge metadata.
+    description: Comprehensive metadata utilities for Nostr, including enhanced NIP-05 verification and badge generation.
+
+  - id: node-red-contrib-nostr
+    ecosystem: npm
+    current_name: node-red-contrib-nostr
+    target_name: node-red-contrib-nostr
+    old_names: []
+    family: nostr
+    pillar: tool
+    version: 0.2.2
+    status: published
+    advertise_install: true
+    test_count: 11
+    repo:
+      path: /Users/vveerrgg/Development/node-red-contrib-nostr
+      slug: HumanjavaEnterprises/node-red-contrib-nostr
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/node-red-contrib-nostr/ci.yml
+      version: https://img.shields.io/npm/v/node-red-contrib-nostr
+      license: null
+    install: npm install node-red-contrib-nostr
+    urls:
+      npm: https://www.npmjs.com/package/node-red-contrib-nostr
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/node-red-contrib-nostr
+      docs: null
+    tagline: Node-RED nodes for Nostr flows.
+    description: Node-RED nodes for Nostr protocol integration with WebSocket handling, event filtering, and NPUB-based routing.
+
+  # ---------------------------------------------------------------------------
+  # npm — Nostr Secure Enclave (code complete, not yet published)
+  # ---------------------------------------------------------------------------
+
+  - id: nostr-secure-enclave
+    ecosystem: npm
+    current_name: nostr-secure-enclave
+    target_name: nostr-secure-enclave
+    old_names: []
+    family: enclave
+    pillar: identity
+    version: 0.1.0
+    status: code
+    advertise_install: false
+    test_count: 9
+    repo:
+      path: /Users/vveerrgg/Development/nse-dev.web.landingpage.src/platforms/core
+      slug: HumanjavaEnterprises/nse-dev.web.landingpage.src
+    badges:
+      ci: null
+      version: null
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: null
+    urls:
+      npm: null
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nse-dev.web.landingpage.src
+      docs: null
+    tagline: Shared types for the Nostr Secure Enclave.
+    description: Shared types for Nostr Secure Enclave — hardware-backed key management for Nostr.
+
+  - id: nostr-secure-enclave-server
+    ecosystem: npm
+    current_name: nostr-secure-enclave-server
+    target_name: nostr-secure-enclave-server
+    old_names: []
+    family: enclave
+    pillar: identity
+    version: 0.1.0
+    status: code
+    advertise_install: false
+    test_count: 23
+    repo:
+      path: /Users/vveerrgg/Development/nse-dev.web.landingpage.src/platforms/server
+      slug: HumanjavaEnterprises/nse-dev.web.landingpage.src
+    badges:
+      ci: null
+      version: null
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: null
+    urls:
+      npm: null
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nse-dev.web.landingpage.src
+      docs: null
+    tagline: Server-side Nostr Secure Enclave.
+    description: Server-side Nostr Secure Enclave — process keypairs for relays, blossom, MCP.
+
+  - id: nostr-secure-enclave-browser
+    ecosystem: npm
+    current_name: nostr-secure-enclave-browser
+    target_name: nostr-secure-enclave-browser
+    old_names: []
+    family: enclave
+    pillar: identity
+    version: 0.1.0
+    status: code
+    advertise_install: false
+    test_count: 23
+    repo:
+      path: /Users/vveerrgg/Development/nse-dev.web.landingpage.src/platforms/browser
+      slug: HumanjavaEnterprises/nse-dev.web.landingpage.src
+    badges:
+      ci: null
+      version: null
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: null
+    urls:
+      npm: null
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nse-dev.web.landingpage.src
+      docs: null
+    tagline: Browser Nostr Secure Enclave (WebAuthn + SubtleCrypto).
+    description: Browser Nostr Secure Enclave — WebAuthn + SubtleCrypto key wrapping for secp256k1.
+
+  # ---------------------------------------------------------------------------
+  # npm — orphan: on the registry, no source repo on disk
+  # ---------------------------------------------------------------------------
+
+  - id: nostr-ipfs-file-store
+    ecosystem: npm
+    current_name: nostr-ipfs-file-store
+    target_name: nostr-ipfs-file-store
+    old_names: []
+    family: nostr
+    pillar: tool
+    version: 1.0.1
+    status: orphan
+    advertise_install: false
+    test_count: 0
+    repo:
+      path: null
+      slug: HumanjavaEnterprises/nostr-ipfs-file-store
+    badges:
+      ci: null
+      version: null
+      license: null
+    install: null
+    urls:
+      npm: https://www.npmjs.com/package/nostr-ipfs-file-store
+      pypi: null
+      clawhub: null
+      source: null
+      docs: null
+    tagline: IPFS-backed file store for Nostr (unmaintained).
+    description: Published to npm at 1.0.1 but no source repository exists on disk. Tracked as an orphan so it is never advertised.
+
+  # ---------------------------------------------------------------------------
+  # pypi — OpenClaw AI-agent SDKs (published to PyPI + ClawHub)
+  # ---------------------------------------------------------------------------
+
+  - id: nostrkey
+    ecosystem: pypi
+    current_name: nostrkey
+    target_name: nostr-key
+    old_names: [nostrkey]
+    family: nostr
+    pillar: identity
+    version: 0.3.2
+    status: published
+    advertise_install: true
+    test_count: 81
+    repo:
+      path: /Users/vveerrgg/Development/nostrkey.app.OC-python.src
+      slug: HumanjavaEnterprises/nostrkey.app.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/nostrkey
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: pip install nostrkey
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/nostrkey/
+      clawhub: https://clawhub.ai/skills/nostrkey
+      source: https://github.com/HumanjavaEnterprises/nostrkey.app.OC-python.src
+      docs: null
+    tagline: Nostr identity for AI agents.
+    description: Nostr identity SDK for OpenClaw AI entities — generate keys, sign events, encrypt data.
+
+  - id: nostrsocial
+    ecosystem: pypi
+    current_name: nostrsocial
+    target_name: nostr-social
+    old_names: [nostrsocial]
+    family: nostr
+    pillar: relationships
+    version: 0.1.1
+    status: published
+    advertise_install: true
+    test_count: 330
+    repo:
+      path: /Users/vveerrgg/Development/nostrsocial.app.OC-python.src
+      slug: HumanjavaEnterprises/nostrsocial.app.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/nostrsocial
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: pip install nostrsocial
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/nostrsocial/
+      clawhub: https://clawhub.ai/skills/nostrsocial
+      source: https://github.com/HumanjavaEnterprises/nostrsocial.app.OC-python.src
+      docs: null
+    tagline: Social graph and trust tiers for AI agents.
+    description: Social graph manager for OpenClaw AI agents — contacts, trust tiers, and identity verification over Nostr.
+
+  - id: nostrcalendar
+    ecosystem: pypi
+    current_name: nostrcalendar
+    target_name: nostr-calendar
+    old_names: [nostrcalendar]
+    family: nostr
+    pillar: time
+    version: 0.2.1
+    status: published
+    advertise_install: true
+    test_count: 29
+    repo:
+      path: /Users/vveerrgg/Development/nostrcalendar.app.OC-python.src
+      slug: HumanjavaEnterprises/nostrcalendar.app.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/nostrcalendar
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: pip install nostrcalendar
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/nostrcalendar/
+      clawhub: https://clawhub.ai/skills/nostrcalendar
+      source: https://github.com/HumanjavaEnterprises/nostrcalendar.app.OC-python.src
+      docs: null
+    tagline: Nostr-native scheduling for AI agents.
+    description: Nostr-native scheduling for OpenClaw AI agents — read availability, book meetings, negotiate times over relay.
+
+  - id: nostrwalletconnect
+    ecosystem: pypi
+    current_name: nostrwalletconnect
+    target_name: nostr-wallet-connect
+    old_names: [nostrwalletconnect]
+    family: nostr
+    pillar: finance
+    version: 0.1.2
+    status: published
+    advertise_install: true
+    test_count: 23
+    repo:
+      path: /Users/vveerrgg/Development/nwc.app.OC-python.src
+      slug: HumanjavaEnterprises/nwc.app.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/nostrwalletconnect
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: pip install nostrwalletconnect
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/nostrwalletconnect/
+      clawhub: https://clawhub.ai/skills/nostrwalletconnect
+      source: https://github.com/HumanjavaEnterprises/nwc.app.OC-python.src
+      docs: null
+    tagline: NIP-47 wallet connect for AI agents.
+    description: Nostr Wallet Connect (NIP-47) SDK for OpenClaw AI entities — pay invoices, check balance, create invoices.
+
+  - id: nostr-profile
+    ecosystem: pypi
+    current_name: nostr-profile
+    target_name: nostr-profile
+    old_names: []
+    family: nostr
+    pillar: identity
+    version: 0.1.9
+    status: published
+    advertise_install: true
+    test_count: 66
+    repo:
+      path: /Users/vveerrgg/Development/huje.nostrprofile.OC-python.src
+      slug: HumanjavaEnterprises/huje.nostrprofile.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/nostr-profile
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: pip install nostr-profile
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/nostr-profile/
+      clawhub: https://clawhub.ai/skills/nostr-profile
+      source: https://github.com/HumanjavaEnterprises/huje.nostrprofile.OC-python.src
+      docs: null
+    tagline: Kind-0 profile management for AI agents.
+    description: Nostr profile management for OpenClaw AI agents — publish, read, and update kind 0 metadata.
+
+  - id: sense-memory
+    ecosystem: pypi
+    current_name: sense-memory
+    target_name: sense-memory
+    old_names: []
+    family: sense
+    pillar: perception
+    version: 0.2.0
+    status: published
+    advertise_install: true
+    test_count: 25
+    repo:
+      path: /Users/vveerrgg/Development/huje.sensememory.OC-python.src
+      slug: HumanjavaEnterprises/huje.sensememory.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/sense-memory
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: pip install sense-memory
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/sense-memory/
+      clawhub: https://clawhub.ai/skills/sense-memory
+      source: https://github.com/HumanjavaEnterprises/huje.sensememory.OC-python.src
+      docs: null
+    tagline: Sovereign encrypted memory for AI agents.
+    description: Sovereign persistence for OpenClaw AI agents — encrypted memories on Nostr relays.
+
+  - id: sense-music
+    ecosystem: pypi
+    current_name: sense-music
+    target_name: sense-music
+    old_names: []
+    family: sense
+    pillar: perception
+    version: 0.1.3
+    status: published
+    advertise_install: true
+    test_count: 53
+    repo:
+      path: /Users/vveerrgg/Development/huje.sensemusic.OC-python.src
+      slug: HumanjavaEnterprises/huje.sensemusic.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/sense-music
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: pip install sense-music
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/sense-music/
+      clawhub: https://clawhub.ai/skills/sense-music
+      source: https://github.com/HumanjavaEnterprises/huje.sensemusic.OC-python.src
+      docs: null
+    tagline: Audio into structured perception.
+    description: Turn audio into structured analysis and annotated visualizations for AI perception.
+
+  - id: socialcard
+    ecosystem: pypi
+    current_name: socialcard
+    target_name: social-card
+    old_names: [socialcard]
+    family: social
+    pillar: tool
+    version: 0.1.3
+    status: published
+    advertise_install: true
+    test_count: 32
+    repo:
+      path: /Users/vveerrgg/Development/huje.socialcard.OC-python.src
+      slug: HumanjavaEnterprises/huje.socialcard.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/socialcard
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: pip install socialcard
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/socialcard/
+      clawhub: https://clawhub.ai/skills/socialcard
+      source: https://github.com/HumanjavaEnterprises/huje.socialcard.OC-python.src
+      docs: null
+    tagline: Beautiful social card image generation.
+    description: Generate beautiful social card images (OG, Twitter, GitHub) with a builder API.
+
+  - id: nse-orchestrator
+    ecosystem: pypi
+    current_name: nse-orchestrator
+    target_name: nse-orchestrator
+    old_names: []
+    family: orchestrator
+    pillar: orchestrator
+    version: 0.2.0
+    status: published
+    advertise_install: true
+    test_count: 88
+    repo:
+      path: /Users/vveerrgg/Development/nse-orchestrator.app.OC-python.src
+      slug: HumanjavaEnterprises/nse-orchestrator.app.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/nse-orchestrator
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: pip install nse-orchestrator
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/nse-orchestrator/
+      clawhub: https://clawhub.ai/skills/nse
+      source: https://github.com/HumanjavaEnterprises/nse-orchestrator.app.OC-python.src
+      docs: null
+    tagline: The nervous system that wires the pillars together.
+    description: Sovereign entity orchestrator — wires identity, wallet, calendar, relationships, and alignment into a coherent whole.
+
+  - id: social-alignment
+    ecosystem: pypi
+    current_name: social-alignment
+    target_name: social-alignment
+    old_names: []
+    family: social
+    pillar: alignment
+    version: 0.1.5
+    status: shell
+    advertise_install: false
+    test_count: 0
+    repo:
+      path: /Users/vveerrgg/Development/nostralignment.app.OC-python.src
+      slug: HumanjavaEnterprises/nostralignment.app.OC-python.src
+    badges:
+      ci: null
+      version: null
+      license: null
+    install: null
+    urls:
+      npm: null
+      pypi: null
+      clawhub: https://clawhub.ai/skills/social-alignment
+      source: https://github.com/HumanjavaEnterprises/nostralignment.app.OC-python.src
+      docs: null
+    tagline: Five-lens pre-action compass for sovereign AI (metadata only).
+    description: A deterministic pre-action five-lens compass for sovereign AI agents — the alignment pillar of the NSE platform. Metadata shell; not yet published.
+
+  # ---------------------------------------------------------------------------
+  # plugin — Hermes Agent plugin (code complete)
+  # ---------------------------------------------------------------------------
+
+  - id: nostr-key-hermes
+    ecosystem: plugin
+    current_name: nostrkey
+    target_name: nostr-key-hermes
+    old_names: []
+    family: nostr
+    pillar: identity
+    version: 0.2.0
+    status: code
+    advertise_install: false
+    test_count: 0
+    repo:
+      path: /Users/vveerrgg/Development/nostrkey.app.HA-python.src
+      slug: HumanjavaEnterprises/nostrkey.app.HA-python.src
+    badges:
+      ci: null
+      version: null
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: null
+    urls:
+      npm: null
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostrkey.app.HA-python.src
+      docs: null
+    tagline: Give your Hermes Agent its own Nostr identity.
+    description: Hermes Agent plugin providing a Nostr identity — generate keypairs, sign events, encrypt to disk, gated nsec/seed export with audit logging. Seven tools.

@@ -2,6 +2,15 @@
 # Edit HERE. Sites and CI fetch this file; they never re-derive package facts.
 # Every row is verified against the package's real on-disk manifest.
 # Run scripts/validate_registry.py before committing any change.
+#
+# RELEASE TRAIN (2026-07): versions below reflect the coordinated 2026-07
+# correctness + security-hardening release train (adversarial multi-agent audit;
+# family-wide fixes verified against a shared KAT vector spine — NIP-44 v2 /
+# NIP-49 / NIP-19 TLV / BIP-340). The fixes are STAGED on git branches and merged
+# main; npm/PyPI publish is OTP-gated and IMMINENT but NOT yet done — treat these
+# numbers as the release-of-record set, not proof the tarball is already on the
+# registry. Kernel-first publish order + full detail: audit/RELEASE-RUNBOOK.md
+# and audit/release-fix-plan-2026-07-17.md.
 
 version: 1
 
@@ -24,7 +33,7 @@ packages:
     old_names: []
     family: core
     pillar: tool
-    version: 0.7.1
+    version: 0.8.0
     status: published
     advertise_install: true
     test_count: 143
@@ -52,7 +61,7 @@ packages:
     old_names: []
     family: enclave
     pillar: identity
-    version: 0.7.1
+    version: 0.8.0
     status: published
     advertise_install: true
     test_count: 24
@@ -80,7 +89,7 @@ packages:
     old_names: []
     family: nostr
     pillar: identity
-    version: 0.5.1
+    version: 0.6.0
     status: published
     advertise_install: true
     test_count: 35
@@ -108,7 +117,7 @@ packages:
     old_names: []
     family: nostr
     pillar: tool
-    version: 0.4.1
+    version: 0.5.0
     status: published
     advertise_install: true
     test_count: 16
@@ -136,7 +145,7 @@ packages:
     old_names: []
     family: nostr
     pillar: identity
-    version: 0.2.1
+    version: 0.2.2
     status: published
     advertise_install: true
     test_count: 5
@@ -164,7 +173,7 @@ packages:
     old_names: []
     family: nostr
     pillar: identity
-    version: 0.3.1
+    version: 0.4.0
     status: published
     advertise_install: true
     test_count: 24
@@ -192,7 +201,7 @@ packages:
     old_names: []
     family: nostr
     pillar: tool
-    version: 0.2.1
+    version: 0.2.2
     status: published
     advertise_install: true
     test_count: 4
@@ -220,7 +229,7 @@ packages:
     old_names: []
     family: nostr
     pillar: tool
-    version: 0.2.2
+    version: 0.3.0
     status: published
     advertise_install: true
     test_count: 11
@@ -372,7 +381,7 @@ packages:
     old_names: [nostrkey]
     family: nostr
     pillar: identity
-    version: 0.3.2
+    version: 0.3.4
     status: published
     advertise_install: true
     test_count: 81
@@ -400,7 +409,7 @@ packages:
     old_names: [nostrsocial]
     family: nostr
     pillar: relationships
-    version: 0.1.1
+    version: 0.1.2
     status: published
     advertise_install: true
     test_count: 330
@@ -428,7 +437,7 @@ packages:
     old_names: [nostrcalendar]
     family: nostr
     pillar: time
-    version: 0.2.1
+    version: 0.2.2
     status: published
     advertise_install: true
     test_count: 29
@@ -456,7 +465,7 @@ packages:
     old_names: [nostrwalletconnect]
     family: nostr
     pillar: finance
-    version: 0.1.2
+    version: 0.2.0
     status: published
     advertise_install: true
     test_count: 23
@@ -484,7 +493,7 @@ packages:
     old_names: []
     family: nostr
     pillar: identity
-    version: 0.1.9
+    version: 0.1.10
     status: published
     advertise_install: true
     test_count: 66
@@ -512,7 +521,7 @@ packages:
     old_names: []
     family: sense
     pillar: perception
-    version: 0.2.0
+    version: 0.2.1
     status: published
     advertise_install: true
     test_count: 25
@@ -540,7 +549,7 @@ packages:
     old_names: []
     family: sense
     pillar: perception
-    version: 0.1.3
+    version: 0.1.4
     status: published
     advertise_install: true
     test_count: 53
@@ -596,7 +605,7 @@ packages:
     old_names: []
     family: orchestrator
     pillar: orchestrator
-    version: 0.2.0
+    version: 0.2.1
     status: published
     advertise_install: true
     test_count: 88
@@ -625,7 +634,7 @@ packages:
     family: social
     pillar: alignment
     version: 0.1.5
-    status: shell
+    status: code
     advertise_install: false
     test_count: 0
     repo:
@@ -642,8 +651,8 @@ packages:
       clawhub: https://clawhub.ai/skills/social-alignment
       source: https://github.com/HumanjavaEnterprises/nostralignment.app.OC-python.src
       docs: null
-    tagline: Five-lens pre-action compass for sovereign AI (metadata only).
-    description: A deterministic pre-action five-lens compass for sovereign AI agents — the alignment pillar of the NSE platform. Metadata shell; not yet published.
+    tagline: Five-lens pre-action compass for sovereign AI.
+    description: A deterministic pre-action five-lens compass for sovereign AI agents — the alignment pillar of the NSE platform. Built out from an empty shell into real code; code-complete and staged pending publish.
 
   # ---------------------------------------------------------------------------
   # plugin — Hermes Agent plugin (code complete)

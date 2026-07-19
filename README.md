@@ -12,6 +12,28 @@ pages, and CI all **fetch this file** and render from it. If a fact about a pack
 is wrong on a website, you fix it *here* and rebuild the site — you never edit the
 fact in two places.
 
+The registry is the family's ledger: every npm library, PyPI SDK, and Hermes
+plugin the family ships is a row here, and the family **dogfoods only its own
+libraries** (no upstream `nostr-tools`). When you need to know what exists, what
+version is of record, and whether it is safe to advertise — you look here first.
+
+## Audit & release plans
+
+The deeper "why" behind the current numbers lives in [`audit/`](./audit/):
+
+- [`release-fix-plan-2026-07-17.md`](./audit/release-fix-plan-2026-07-17.md) — the
+  master fix plan from the 2026-07 adversarial multi-agent correctness audit
+  (83 verified bugs across the family, all fixed with real known-answer tests and
+  a new shared KAT vector spine — NIP-44 v2 / NIP-49 / NIP-19 TLV / BIP-340).
+- [`RELEASE-RUNBOOK.md`](./audit/RELEASE-RUNBOOK.md) — the coordinated, kernel-first
+  release train (merge order, npm/PyPI/ClawHub publish order, deferred waves).
+- `release-audit-2026-07-17*.json` — the raw verified findings behind the plan.
+
+The versions in `packages.yaml` reflect that release-of-record set. As of
+2026-07-19 the fixes are staged/merged and publish is OTP-gated and imminent —
+`packages.yaml`'s top-of-file note flags this so a bumped number is never mistaken
+for proof the tarball is already live.
+
 ## Why a registry
 
 The family spans three ecosystems with overlapping names (npm `nostr-*`, PyPI

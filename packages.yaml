@@ -33,7 +33,7 @@ packages:
     old_names: []
     family: core
     pillar: tool
-    version: 0.8.0
+    version: 0.9.1
     status: published
     advertise_install: true
     test_count: 143
@@ -521,7 +521,7 @@ packages:
     old_names: []
     family: sense
     pillar: perception
-    version: 0.2.1
+    version: 0.3.0
     status: published
     advertise_install: true
     test_count: 25
@@ -549,7 +549,7 @@ packages:
     old_names: []
     family: sense
     pillar: perception
-    version: 0.1.6
+    version: 0.3.1
     status: published
     advertise_install: true
     test_count: 53
@@ -633,7 +633,7 @@ packages:
     old_names: []
     family: social
     pillar: alignment
-    version: 0.1.5
+    version: 0.1.6
     status: code
     advertise_install: false
     test_count: 0

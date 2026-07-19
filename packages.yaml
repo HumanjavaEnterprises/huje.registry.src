@@ -409,7 +409,7 @@ packages:
     old_names: [nostrsocial]
     family: nostr
     pillar: relationships
-    version: 0.1.2
+    version: 0.1.4
     status: published
     advertise_install: true
     test_count: 330
@@ -437,7 +437,7 @@ packages:
     old_names: [nostrcalendar]
     family: nostr
     pillar: time
-    version: 0.2.2
+    version: 0.2.4
     status: published
     advertise_install: true
     test_count: 29
@@ -493,7 +493,7 @@ packages:
     old_names: []
     family: nostr
     pillar: identity
-    version: 0.1.10
+    version: 0.2.1
     status: published
     advertise_install: true
     test_count: 66
@@ -549,7 +549,7 @@ packages:
     old_names: []
     family: sense
     pillar: perception
-    version: 0.1.4
+    version: 0.1.6
     status: published
     advertise_install: true
     test_count: 53
@@ -605,7 +605,7 @@ packages:
     old_names: []
     family: orchestrator
     pillar: orchestrator
-    version: 0.2.1
+    version: 0.2.3
     status: published
     advertise_install: true
     test_count: 88

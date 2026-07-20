@@ -224,9 +224,9 @@ def main() -> int:
         if status == "code":
             if advertise is not False:
                 errors.append(f"{tag} status=code ⇒ advertise_install=false")
-            if repo_path is None:
-                errors.append(f"{tag} status=code ⇒ repo.path must be set")
-            elif not os.path.isdir(str(repo_path)):
+            # repo.path may be null (paths are not published in this registry);
+            # if a path is provided, it must exist on disk.
+            if repo_path is not None and not os.path.isdir(str(repo_path)):
                 errors.append(
                     f"{tag} status=code ⇒ repo.path must exist on disk: {repo_path}"
                 )

@@ -3,14 +3,10 @@
 # Every row is verified against the package's real on-disk manifest.
 # Run scripts/validate_registry.py before committing any change.
 #
-# RELEASE TRAIN (2026-07): versions below reflect the coordinated 2026-07
-# correctness + security-hardening release train (adversarial multi-agent audit;
-# family-wide fixes verified against a shared KAT vector spine — NIP-44 v2 /
-# NIP-49 / NIP-19 TLV / BIP-340). The fixes are STAGED on git branches and merged
-# main; npm/PyPI publish is OTP-gated and IMMINENT but NOT yet done — treat these
-# numbers as the release-of-record set, not proof the tarball is already on the
-# registry. Kernel-first publish order + full detail: audit/RELEASE-RUNBOOK.md
-# and audit/release-fix-plan-2026-07-17.md.
+# This file is the single source of truth for the Nostr package family. Versions
+# below reflect the 2026-07 security-hardening + correctness release (family-wide
+# fixes verified against a shared KAT vector spine — NIP-44 v2 / NIP-49 /
+# NIP-19 TLV / BIP-340), published kernel-first.
 
 version: 1
 
@@ -38,7 +34,7 @@ packages:
     advertise_install: true
     test_count: 143
     repo:
-      path: /Users/vveerrgg/Development/nostr-crypto-utils
+      path: null
       slug: HumanjavaEnterprises/nostr-crypto-utils
     badges:
       ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-crypto-utils/ci.yml
@@ -66,7 +62,7 @@ packages:
     advertise_install: true
     test_count: 24
     repo:
-      path: /Users/vveerrgg/Development/nostr-nsec-seedphrase
+      path: null
       slug: HumanjavaEnterprises/nostr-nsec-seedphrase
     badges:
       ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-nsec-seedphrase/ci.yml
@@ -94,7 +90,7 @@ packages:
     advertise_install: true
     test_count: 35
     repo:
-      path: /Users/vveerrgg/Development/nostr-auth-middleware
+      path: null
       slug: HumanjavaEnterprises/nostr-auth-middleware
     badges:
       ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-auth-middleware/ci.yml
@@ -122,7 +118,7 @@ packages:
     advertise_install: true
     test_count: 16
     repo:
-      path: /Users/vveerrgg/Development/nostr-websocket-utils
+      path: null
       slug: HumanjavaEnterprises/nostr-websocket-utils
     badges:
       ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-websocket-utils/ci.yml
@@ -150,7 +146,7 @@ packages:
     advertise_install: true
     test_count: 5
     repo:
-      path: /Users/vveerrgg/Development/nostr-biometric-auth-utils
+      path: null
       slug: HumanjavaEnterprises/nostr-biometric-auth-utils
     badges:
       ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-biometric-auth-utils/ci.yml
@@ -178,7 +174,7 @@ packages:
     advertise_install: true
     test_count: 24
     repo:
-      path: /Users/vveerrgg/Development/nostr-dm-magiclink-utils
+      path: null
       slug: HumanjavaEnterprises/nostr-dm-magiclink-utils
     badges:
       ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-dm-magiclink-utils/ci.yml
@@ -206,7 +202,7 @@ packages:
     advertise_install: true
     test_count: 4
     repo:
-      path: /Users/vveerrgg/Development/nostr-metadata-utils
+      path: null
       slug: HumanjavaEnterprises/nostr-metadata-utils
     badges:
       ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-metadata-utils/ci.yml
@@ -234,7 +230,7 @@ packages:
     advertise_install: true
     test_count: 11
     repo:
-      path: /Users/vveerrgg/Development/node-red-contrib-nostr
+      path: null
       slug: HumanjavaEnterprises/node-red-contrib-nostr
     badges:
       ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/node-red-contrib-nostr/ci.yml
@@ -266,7 +262,7 @@ packages:
     advertise_install: false
     test_count: 9
     repo:
-      path: /Users/vveerrgg/Development/nse-dev.web.landingpage.src/platforms/core
+      path: null
       slug: HumanjavaEnterprises/nse-dev.web.landingpage.src
     badges:
       ci: null
@@ -294,7 +290,7 @@ packages:
     advertise_install: false
     test_count: 23
     repo:
-      path: /Users/vveerrgg/Development/nse-dev.web.landingpage.src/platforms/server
+      path: null
       slug: HumanjavaEnterprises/nse-dev.web.landingpage.src
     badges:
       ci: null
@@ -322,7 +318,7 @@ packages:
     advertise_install: false
     test_count: 23
     repo:
-      path: /Users/vveerrgg/Development/nse-dev.web.landingpage.src/platforms/browser
+      path: null
       slug: HumanjavaEnterprises/nse-dev.web.landingpage.src
     badges:
       ci: null
@@ -386,7 +382,7 @@ packages:
     advertise_install: true
     test_count: 81
     repo:
-      path: /Users/vveerrgg/Development/nostrkey.app.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/nostrkey.app.OC-python.src
     badges:
       ci: null
@@ -414,7 +410,7 @@ packages:
     advertise_install: true
     test_count: 330
     repo:
-      path: /Users/vveerrgg/Development/nostrsocial.app.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/nostrsocial.app.OC-python.src
     badges:
       ci: null
@@ -442,7 +438,7 @@ packages:
     advertise_install: true
     test_count: 29
     repo:
-      path: /Users/vveerrgg/Development/nostrcalendar.app.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/nostrcalendar.app.OC-python.src
     badges:
       ci: null
@@ -470,7 +466,7 @@ packages:
     advertise_install: true
     test_count: 23
     repo:
-      path: /Users/vveerrgg/Development/nwc.app.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/nwc.app.OC-python.src
     badges:
       ci: null
@@ -498,7 +494,7 @@ packages:
     advertise_install: true
     test_count: 66
     repo:
-      path: /Users/vveerrgg/Development/huje.nostrprofile.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/huje.nostrprofile.OC-python.src
     badges:
       ci: null
@@ -526,7 +522,7 @@ packages:
     advertise_install: true
     test_count: 25
     repo:
-      path: /Users/vveerrgg/Development/huje.sensememory.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/huje.sensememory.OC-python.src
     badges:
       ci: null
@@ -554,7 +550,7 @@ packages:
     advertise_install: true
     test_count: 53
     repo:
-      path: /Users/vveerrgg/Development/huje.sensemusic.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/huje.sensemusic.OC-python.src
     badges:
       ci: null
@@ -582,7 +578,7 @@ packages:
     advertise_install: true
     test_count: 32
     repo:
-      path: /Users/vveerrgg/Development/huje.socialcard.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/huje.socialcard.OC-python.src
     badges:
       ci: null
@@ -610,7 +606,7 @@ packages:
     advertise_install: true
     test_count: 88
     repo:
-      path: /Users/vveerrgg/Development/nse-orchestrator.app.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/nse-orchestrator.app.OC-python.src
     badges:
       ci: null
@@ -638,7 +634,7 @@ packages:
     advertise_install: false
     test_count: 0
     repo:
-      path: /Users/vveerrgg/Development/nostralignment.app.OC-python.src
+      path: null
       slug: HumanjavaEnterprises/nostralignment.app.OC-python.src
     badges:
       ci: null
@@ -670,7 +666,7 @@ packages:
     advertise_install: false
     test_count: 0
     repo:
-      path: /Users/vveerrgg/Development/nostrkey.app.HA-python.src
+      path: null
       slug: HumanjavaEnterprises/nostrkey.app.HA-python.src
     badges:
       ci: null

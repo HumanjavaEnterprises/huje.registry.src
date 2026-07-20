@@ -17,22 +17,12 @@ plugin the family ships is a row here, and the family **dogfoods only its own
 libraries** (no upstream `nostr-tools`). When you need to know what exists, what
 version is of record, and whether it is safe to advertise — you look here first.
 
-## Audit & release plans
+## Release of record
 
-The deeper "why" behind the current numbers lives in [`audit/`](./audit/):
-
-- [`release-fix-plan-2026-07-17.md`](./audit/release-fix-plan-2026-07-17.md) — the
-  master fix plan from the 2026-07 adversarial multi-agent correctness audit
-  (83 verified bugs across the family, all fixed with real known-answer tests and
-  a new shared KAT vector spine — NIP-44 v2 / NIP-49 / NIP-19 TLV / BIP-340).
-- [`RELEASE-RUNBOOK.md`](./audit/RELEASE-RUNBOOK.md) — the coordinated, kernel-first
-  release train (merge order, npm/PyPI/ClawHub publish order, deferred waves).
-- `release-audit-2026-07-17*.json` — the raw verified findings behind the plan.
-
-The versions in `packages.yaml` reflect that release-of-record set. As of
-2026-07-19 the fixes are staged/merged and publish is OTP-gated and imminent —
-`packages.yaml`'s top-of-file note flags this so a bumped number is never mistaken
-for proof the tarball is already live.
+The versions in `packages.yaml` reflect the 2026-07 security-hardening +
+correctness release across the family (family-wide fixes verified against a
+shared KAT vector spine — NIP-44 v2 / NIP-49 / NIP-19 TLV / BIP-340), published
+kernel-first.
 
 ## Why a registry
 
@@ -51,7 +41,7 @@ truth about it:
 | status | meaning | rules enforced |
 |--------|---------|----------------|
 | `published` | live on its registry | version set, `advertise_install: true`, `install` non-null, npm **or** pypi url non-null |
-| `code` | code-complete, not yet published | `advertise_install: false`, `repo.path` exists on disk |
+| `code` | code-complete, not yet published | `advertise_install: false` |
 | `shell` | metadata only | `advertise_install: false`, `install: null`, npm/pypi url null |
 | `planned` | not built | `advertise_install: false`, `install: null`, npm/pypi url null |
 | `orphan` | on a registry but no source repo on disk | `repo.path: null`, `advertise_install: false` |

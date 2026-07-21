@@ -377,7 +377,7 @@ packages:
     old_names: [nostrkey]
     family: nostr
     pillar: identity
-    version: 0.3.4
+    version: 0.3.5
     status: published
     advertise_install: true
     test_count: 81
@@ -433,7 +433,7 @@ packages:
     old_names: [nostrcalendar]
     family: nostr
     pillar: time
-    version: 0.2.4
+    version: 0.2.5
     status: published
     advertise_install: true
     test_count: 29
@@ -461,7 +461,7 @@ packages:
     old_names: [nostrwalletconnect]
     family: nostr
     pillar: finance
-    version: 0.2.0
+    version: 0.2.1
     status: published
     advertise_install: true
     test_count: 23
@@ -489,7 +489,7 @@ packages:
     old_names: []
     family: nostr
     pillar: identity
-    version: 0.2.1
+    version: 0.2.2
     status: published
     advertise_install: true
     test_count: 66
@@ -517,7 +517,7 @@ packages:
     old_names: []
     family: sense
     pillar: perception
-    version: 0.3.0
+    version: 0.3.1
     status: published
     advertise_install: true
     test_count: 25

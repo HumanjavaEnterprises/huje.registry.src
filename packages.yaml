@@ -5,7 +5,7 @@
 #
 # This file is the single source of truth for the Nostr package family. Versions
 # below reflect the 2026-07 security-hardening + correctness release (family-wide
-# fixes verified against a shared KAT vector spine — NIP-44 v2 / NIP-49 /
+# fixes verified against a shared KAT vector set: NIP-44 v2 / NIP-49 /
 # NIP-19 TLV / BIP-340), published kernel-first.
 
 version: 1

@@ -21,7 +21,7 @@ version is of record, and whether it is safe to advertise — you look here firs
 
 The versions in `packages.yaml` reflect the 2026-07 security-hardening +
 correctness release across the family (family-wide fixes verified against a
-shared KAT vector spine — NIP-44 v2 / NIP-49 / NIP-19 TLV / BIP-340), published
+shared KAT vector set (NIP-44 v2 / NIP-49 / NIP-19 TLV / BIP-340)), published
 kernel-first.
 
 ## Why a registry
@@ -35,7 +35,7 @@ pages. The registry makes drift impossible to hide and cheap to fix.
 
 ## The honesty contract
 
-`status` is the spine, and the validator enforces that every other field tells the
+`status` drives every other field, and the validator enforces that each one tells the
 truth about it:
 
 | status | meaning | rules enforced |

@@ -29,7 +29,7 @@ packages:
     old_names: []
     family: core
     pillar: tool
-    version: 0.9.2
+    version: 0.9.3
     status: published
     advertise_install: true
     test_count: 143
@@ -41,6 +41,7 @@ packages:
       version: https://img.shields.io/npm/v/nostr-crypto-utils
       license: https://img.shields.io/badge/license-MIT-blue
     install: npm install nostr-crypto-utils
+    # 0.9.3 matches both the on-disk manifest and npm dist-tags.latest.
     urls:
       npm: https://www.npmjs.com/package/nostr-crypto-utils
       pypi: null
@@ -246,6 +247,92 @@ packages:
     tagline: Node-RED nodes for Nostr flows.
     description: Node-RED nodes for Nostr protocol integration with WebSocket handling, event filtering, and NPUB-based routing.
 
+  - id: nostr-agentic-identity
+    ecosystem: npm
+    current_name: nostr-agentic-identity
+    target_name: nostr-agentic-identity
+    old_names: []
+    family: nostr
+    pillar: identity
+    version: 0.1.1
+    status: published
+    advertise_install: true
+    test_count: 12
+    repo:
+      path: null
+      slug: HumanjavaEnterprises/nostr-agentic-identity
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-agentic-identity/ci.yml
+      version: https://img.shields.io/npm/v/nostr-agentic-identity
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: npm install nostr-agentic-identity
+    urls:
+      npm: https://www.npmjs.com/package/nostr-agentic-identity
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-agentic-identity
+      docs: null
+    tagline: Nostr identity for agentic entities.
+    description: Agentic Nostr identity primitives. Generate keys, sign events, and carry a portable identity across agents.
+
+  - id: nostr-zpub-utils
+    ecosystem: npm
+    current_name: nostr-zpub-utils
+    target_name: nostr-zpub-utils
+    old_names: []
+    family: nostr
+    pillar: finance
+    version: 0.1.1
+    status: published
+    advertise_install: true
+    test_count: 45
+    repo:
+      path: null
+      slug: HumanjavaEnterprises/nostr-zpub-utils
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-zpub-utils/ci.yml
+      version: https://img.shields.io/npm/v/nostr-zpub-utils
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: npm install nostr-zpub-utils
+    urls:
+      npm: https://www.npmjs.com/package/nostr-zpub-utils
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-zpub-utils
+      docs: null
+    tagline: zpub extended-key utilities for Nostr.
+    description: Utilities for zpub extended public keys in Nostr contexts, derivation and encoding helpers.
+
+  # license is fair-code (free under USD $1M revenue; attribution above),
+  # not MIT; badge reflects that.
+  - id: nostr-business-manifest
+    ecosystem: npm
+    current_name: nostr-business-manifest
+    target_name: nostr-business-manifest
+    old_names: []
+    family: nostr
+    pillar: tool
+    version: 0.1.2
+    status: published
+    advertise_install: true
+    test_count: 33
+    repo:
+      path: null
+      slug: HumanjavaEnterprises/nostr-business-manifest
+    badges:
+      ci: https://img.shields.io/github/actions/workflow/status/HumanjavaEnterprises/nostr-business-manifest/ci.yml
+      version: https://img.shields.io/npm/v/nostr-business-manifest
+      license: https://img.shields.io/badge/license-fair--code-orange
+    install: npm install nostr-business-manifest
+    urls:
+      npm: https://www.npmjs.com/package/nostr-business-manifest
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-business-manifest
+      docs: null
+    tagline: Business manifest format for Nostr entities.
+    description: A manifest format and toolkit for describing a business over Nostr. Schema is CC BY 4.0; software is fair-code.
+
   # ---------------------------------------------------------------------------
   # npm — Nostr Secure Enclave (code complete, not yet published)
   # ---------------------------------------------------------------------------
@@ -333,6 +420,66 @@ packages:
       docs: null
     tagline: Browser Nostr Secure Enclave (WebAuthn + SubtleCrypto).
     description: Browser Nostr Secure Enclave — WebAuthn + SubtleCrypto key wrapping for secp256k1.
+
+  # ---------------------------------------------------------------------------
+  # npm: cross-chain receiving (local POC, not published)
+  # ---------------------------------------------------------------------------
+
+  - id: nostr-crosschain-utils
+    ecosystem: npm
+    current_name: nostr-crosschain-utils
+    target_name: nostr-crosschain-utils
+    old_names: []
+    family: nostr
+    pillar: finance
+    version: 0.1.0
+    status: code
+    advertise_install: false
+    test_count: 43
+    repo:
+      path: null
+      slug: HumanjavaEnterprises/nostr-crosschain-utils
+    badges:
+      ci: null
+      version: null
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: null
+    urls:
+      npm: null
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-crosschain-utils
+      docs: null
+    tagline: Cross-chain receiving helpers from one BIP-39 root.
+    description: Local POC, derive Solana/USDC and EVM/Base receiving addresses from one BIP-39 root. Not published.
+
+  - id: nostr-crosschain-wallet
+    ecosystem: npm
+    current_name: nostr-crosschain-wallet
+    target_name: nostr-crosschain-wallet
+    old_names: []
+    family: nostr
+    pillar: finance
+    version: 0.1.0
+    status: code
+    advertise_install: false
+    test_count: 82
+    repo:
+      path: null
+      slug: HumanjavaEnterprises/nostr-crosschain-wallet
+    badges:
+      ci: null
+      version: null
+      license: https://img.shields.io/badge/license-MIT-blue
+    install: null
+    urls:
+      npm: null
+      pypi: null
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/nostr-crosschain-wallet
+      docs: null
+    tagline: Cross-chain receiving wallet POC.
+    description: Local POC wallet for cross-chain receiving. Carries the two-key caveat on EVM; source-only, not published.
 
   # ---------------------------------------------------------------------------
   # npm — orphan: on the registry, no source repo on disk
@@ -566,14 +713,17 @@ packages:
     tagline: Audio into structured perception.
     description: Turn audio into structured analysis and annotated visualizations for AI perception.
 
+  # NOTE: live PyPI package is `social-card` at 0.2.1 (the old `socialcard`
+  # name 404s and was never the real package). The local repo manifest still
+  # trails at 0.2.0; this registry reflects the LIVE 0.2.1.
   - id: socialcard
     ecosystem: pypi
-    current_name: socialcard
+    current_name: social-card
     target_name: social-card
     old_names: [socialcard]
     family: social
     pillar: tool
-    version: 0.1.3
+    version: 0.2.1
     status: published
     advertise_install: true
     test_count: 32
@@ -582,18 +732,20 @@ packages:
       slug: HumanjavaEnterprises/huje.socialcard.OC-python.src
     badges:
       ci: null
-      version: https://img.shields.io/pypi/v/socialcard
+      version: https://img.shields.io/pypi/v/social-card
       license: https://img.shields.io/badge/license-MIT-blue
-    install: pip install socialcard
+    install: pip install social-card
     urls:
       npm: null
-      pypi: https://pypi.org/project/socialcard/
+      pypi: https://pypi.org/project/social-card/
       clawhub: https://clawhub.ai/skills/socialcard
       source: https://github.com/HumanjavaEnterprises/huje.socialcard.OC-python.src
       docs: null
     tagline: Beautiful social card image generation.
     description: Generate beautiful social card images (OG, Twitter, GitHub) with a builder API.
 
+  # NOTE: local repo is at 0.3.0 unreleased; registry stays at the LIVE PyPI
+  # truth 0.2.3. Advertising 0.3.0 would recreate the install-404 bug.
   - id: nse-orchestrator
     ecosystem: pypi
     current_name: nse-orchestrator
@@ -630,25 +782,86 @@ packages:
     family: social
     pillar: alignment
     version: 0.1.6
-    status: code
-    advertise_install: false
+    status: published
+    advertise_install: true
+    maturity: experimental
     test_count: 0
     repo:
       path: null
       slug: HumanjavaEnterprises/nostralignment.app.OC-python.src
     badges:
       ci: null
-      version: null
+      version: https://img.shields.io/pypi/v/social-alignment
       license: null
-    install: null
+    install: pip install social-alignment
     urls:
       npm: null
-      pypi: null
+      pypi: https://pypi.org/project/social-alignment/
       clawhub: https://clawhub.ai/skills/social-alignment
       source: https://github.com/HumanjavaEnterprises/nostralignment.app.OC-python.src
       docs: null
-    tagline: Five-lens pre-action compass for sovereign AI.
-    description: A deterministic pre-action five-lens compass for sovereign AI agents — the alignment pillar of the NSE platform. Built out from an empty shell into real code; code-complete and staged pending publish.
+    tagline: Five-lens pre-action compass for AI agents.
+    description: A deterministic pre-action compass for AI agents, the alignment pillar of the NSE platform. Five lenses weigh an action before the agent takes it. Early release, installable but not production-hardened.
+
+  # social-value: live on PyPI at 0.1.0 (early/experimental). No public source
+  # repo on GitHub yet, so urls.source and repo.slug stay null.
+  - id: social-value
+    ecosystem: pypi
+    current_name: social-value
+    target_name: social-value
+    old_names: []
+    family: social
+    pillar: finance
+    version: 0.1.0
+    status: published
+    advertise_install: true
+    maturity: experimental
+    test_count: 0
+    repo:
+      path: null
+      slug: null
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/social-value
+      license: null
+    install: pip install social-value
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/social-value/
+      clawhub: null
+      source: null
+      docs: null
+    tagline: An economic layer for AI agents.
+    description: An economic layer that lets an AI agent hold and move small amounts of value on its own. Early release, installable but not production-hardened.
+
+  - id: sense-wonder
+    ecosystem: pypi
+    current_name: sense-wonder
+    target_name: sense-wonder
+    old_names: []
+    family: sense
+    pillar: perception
+    version: 0.1.2
+    status: published
+    advertise_install: true
+    maturity: experimental
+    test_count: 0
+    repo:
+      path: null
+      slug: HumanjavaEnterprises/huje.sensewonder.OC-python.src
+    badges:
+      ci: null
+      version: https://img.shields.io/pypi/v/sense-wonder
+      license: null
+    install: pip install sense-wonder
+    urls:
+      npm: null
+      pypi: https://pypi.org/project/sense-wonder/
+      clawhub: null
+      source: https://github.com/HumanjavaEnterprises/huje.sensewonder.OC-python.src
+      docs: null
+    tagline: Philosophical reading material for AI agents.
+    description: Articles, conversation starters, and song lyrics as structured context an AI agent can draw on. Zero dependencies. Early release, installable but not production-hardened.
 
   # ---------------------------------------------------------------------------
   # plugin — Hermes Agent plugin (code complete)

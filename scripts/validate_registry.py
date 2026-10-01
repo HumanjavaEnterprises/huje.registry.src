@@ -9,10 +9,16 @@ Usage:
 """
 from __future__ import annotations
 
+import json
 import os
 import re
 import sys
+import urllib.error
+import urllib.request
 from urllib.parse import urlparse
+
+# How long to wait on each live registry call before giving up.
+LIVE_TIMEOUT = 8
 
 try:
     import yaml
@@ -43,8 +49,76 @@ def is_wellformed_url(value: str) -> bool:
     return bool(parsed.scheme) and bool(parsed.netloc)
 
 
+def _fetch_json(url: str) -> dict | None:
+    """Fetch JSON from a registry. Returns None if the host is unreachable
+    (offline-friendly) and raises nothing; callers treat None as 'skip'."""
+    req = urllib.request.Request(url, headers={"User-Agent": "huje-registry-validator"})
+    with urllib.request.urlopen(req, timeout=LIVE_TIMEOUT) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def npm_latest(name: str) -> str | None:
+    """dist-tags.latest for an npm package, or None if the package 404s."""
+    try:
+        data = _fetch_json(f"https://registry.npmjs.org/{name}")
+    except urllib.error.HTTPError:
+        return None
+    return (data or {}).get("dist-tags", {}).get("latest")
+
+
+def pypi_latest(name: str) -> str | None:
+    """info.version for a PyPI package, or None if the project 404s."""
+    try:
+        data = _fetch_json(f"https://pypi.org/pypi/{name}/json")
+    except urllib.error.HTTPError:
+        return None
+    return (data or {}).get("info", {}).get("version")
+
+
+def have_network() -> bool:
+    try:
+        _fetch_json("https://registry.npmjs.org/-/ping?write=false")
+        return True
+    except Exception:
+        return False
+
+
+def check_live(packages, errors):
+    """For every advertise_install=true row, confirm the install target exists
+    live and that the declared version matches dist-tags.latest / info.version."""
+    for pkg in packages:
+        if pkg.get("advertise_install") is not True:
+            continue
+        pid = pkg.get("id")
+        tag = f"[{pid}]"
+        eco = pkg.get("ecosystem")
+        name = pkg.get("current_name")
+        declared = str(pkg.get("version"))
+        if eco == "npm":
+            live = npm_latest(name)
+            where = "npm"
+        elif eco == "pypi":
+            live = pypi_latest(name)
+            where = "pypi"
+        else:
+            # plugin/both: only check if a concrete name resolves; skip otherwise.
+            continue
+        if live is None:
+            errors.append(
+                f"{tag} advertise_install=true but `{name}` does not resolve "
+                f"live on {where} (install target would 404)"
+            )
+        elif str(live) != declared:
+            errors.append(
+                f"{tag} version `{declared}` != live {where} latest `{live}`"
+            )
+
+
 def main() -> int:
-    path = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_YAML
+    argv = [a for a in sys.argv[1:] if not a.startswith("-")]
+    flags = {a for a in sys.argv[1:] if a.startswith("-")}
+    offline = "--offline" in flags
+    path = argv[0] if argv else DEFAULT_YAML
     path = os.path.abspath(path)
     with open(path, "r", encoding="utf-8") as fh:
         doc = yaml.safe_load(fh)
@@ -106,6 +180,15 @@ def main() -> int:
             errors.append(f"{tag} pillar `{pkg.get('pillar')}` not in enum")
         if status not in valid_status:
             errors.append(f"{tag} status `{status}` not in enum")
+
+        # optional maturity field: if present it must be stable or experimental.
+        # A maturity does not change any status rule; an experimental row is
+        # still a normal published row for the live-check below.
+        maturity = pkg.get("maturity")
+        if maturity is not None and maturity not in ("stable", "experimental"):
+            errors.append(
+                f"{tag} maturity `{maturity}` must be 'stable' or 'experimental'"
+            )
 
         # types
         if not isinstance(pkg.get("advertise_install"), bool):
@@ -193,6 +276,22 @@ def main() -> int:
                 f"(is `{status}`)"
             )
 
+        # (b) anything not published must not advertise and must carry no live
+        # install surface (install / npm / pypi all null). Orphan is the one
+        # exception: it legitimately keeps its registry url (published, no source).
+        if status != "published":
+            if advertise is not False:
+                errors.append(
+                    f"{tag} status={status} ⇒ advertise_install must be false"
+                )
+            if install is not None:
+                errors.append(f"{tag} status={status} ⇒ install must be null")
+            if status != "orphan":
+                if npm_url is not None:
+                    errors.append(f"{tag} status={status} ⇒ urls.npm must be null")
+                if pypi_url is not None:
+                    errors.append(f"{tag} status={status} ⇒ urls.pypi must be null")
+
         if status == "published":
             if not version:
                 errors.append(f"{tag} published ⇒ version must be set")
@@ -234,6 +333,17 @@ def main() -> int:
         # ---- WARNING: missing license badge --------------------------------
         if badges.get("license") is None:
             warnings.append(f"{tag} has no license badge (badges.license=null)")
+
+    # ---- live reality checks ----------------------------------------------
+    # Confirm every advertised install target actually resolves live and the
+    # declared version matches. Skippable for CI/offline use.
+    if offline:
+        print("Live checks: SKIPPED (--offline)")
+    elif not have_network():
+        print("Live checks: SKIPPED (no network reachable)")
+    else:
+        print("Live checks: ON (npm dist-tags + PyPI info.version)")
+        check_live(packages, errors)
 
     # ---- report ------------------------------------------------------------
     print(f"Registry: {path}")

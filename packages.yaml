@@ -803,36 +803,6 @@ packages:
     tagline: Five-lens pre-action compass for AI agents.
     description: A deterministic pre-action compass for AI agents, the alignment pillar of the NSE platform. Five lenses weigh an action before the agent takes it. Early release, installable but not production-hardened.
 
-  # social-value: live on PyPI at 0.1.0 (early/experimental). No public source
-  # repo on GitHub yet, so urls.source and repo.slug stay null.
-  - id: social-value
-    ecosystem: pypi
-    current_name: social-value
-    target_name: social-value
-    old_names: []
-    family: social
-    pillar: finance
-    version: 0.1.0
-    status: published
-    advertise_install: true
-    maturity: experimental
-    test_count: 0
-    repo:
-      path: null
-      slug: null
-    badges:
-      ci: null
-      version: https://img.shields.io/pypi/v/social-value
-      license: null
-    install: pip install social-value
-    urls:
-      npm: null
-      pypi: https://pypi.org/project/social-value/
-      clawhub: null
-      source: null
-      docs: null
-    tagline: An economic layer for AI agents.
-    description: An economic layer that lets an AI agent hold and move small amounts of value on its own. Early release, installable but not production-hardened.
 
   - id: sense-wonder
     ecosystem: pypi
